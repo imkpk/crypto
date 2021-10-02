@@ -24,7 +24,7 @@ module.exports = {
     'react',
   ],
   rules: {
-    indent: 'off',
+    indent: ['error', 2],
     'template-curly-spacing': 'off',
     'import/extensions': 0,
     'react/prop-types': 0,
