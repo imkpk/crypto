@@ -15,12 +15,8 @@ useEffect(() => {
   const filterdData = cpList?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(searchTerm.toLocaleLowerCase()));
 
   setCryptos(filterdData);
-  // return () => {
-  //   cleanup
-  // }
 }, [cpList, searchTerm]);
   if (isFetching) return 'Loading Coins...';
-  // console.log(cryptos);
   return (
     <>
       {!simplified && (
@@ -32,7 +28,7 @@ useEffect(() => {
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((coin) => (
           <Col xs={24} sm={12} lg={6} key={coin.id} className="crypto-card">
-            <Link to={`/crypto/${coin.id}`}>
+            <Link key={coin.id} to={`/crypto/${coin.id}`}>
               <Card
                 title={`${coin.rank}. ${coin.name}`}
                 extra={<img className="crypto-image" src={coin.iconUrl} />}
