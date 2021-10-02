@@ -18,7 +18,7 @@ baseQuery: fetchBaseQuery({ baseUrl }),
 endpoints: (builder) => ({
   // adding endpoints
   getCryptos: builder.query({
-    query: () => createRequest('/coins'),
+    query: (count) => createRequest(`/coins?limit=${count}`),
   }),
 }),
 });
